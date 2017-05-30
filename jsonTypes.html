@@ -25,19 +25,28 @@ Section: x
 
 <script type="text/javascript">
 
-var myObj2 = { "name":"John", "age":31, "city":"New York" };
+//Json Strings
 
-alert(myObj2.name);
-alert (myObj2["age"]);
+var strings = {"name":"John"}
+//alert(strings.name);
 
-myObj2.name ="okan";
-myObj2.age=30;
+//Json Numbers
+var ints = {"age":30}
 
-alert ( myObj2["name"] + ' ' + myObj2.age);
+// Json Objects
 
+var objects = { "employee" : {"name":"John", "age":30,"city":"Ankara"} }
 
+//alert(objects.employee.city);
 
+// Json Arrays
+var arrays = {"employees":["John","okan","peter"]}
 
+// Json Booleans 
+var booleans = {"sale":true}
+
+// Json Null
+var nulls = {"middlename":null}
 
 </script>
 

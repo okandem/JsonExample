@@ -26,18 +26,18 @@ Section: x
 <script type="text/javascript">
 
 var myObj2 = { "name":"John", "age":31, "city":"New York" };
+var myJSON2 = JSON.stringify(myObj2);
+alert( myJSON2);
+localStorage.setItem("testJSON",myJSON2);
 
-alert(myObj2.name);
-alert (myObj2["age"]);
+text = localStorage.getItem("testJSON");
+obj= JSON.parse(text);
+document.getElementById("demo").innerHTML= obj.name;
 
-myObj2.name ="okan";
-myObj2.age=30;
-
-alert ( myObj2["name"] + ' ' + myObj2.age);
-
-
-
-
+<!--var myJSON = '{"name":"okan"}';
+var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.name;
+-->
 
 </script>
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+This is a skeleton html file that you can use to get you started on each new 
+HTML project
+
+Name: Your Name Here
+Class: CIS 3303
+Section: x
+-->
+<html>
+
+<head>
+<title>My Title</title>
+ <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+//accessing Object Values
+
+myObj = {"name":"Okan","age":30,"city":null}
+x= myObj.name;
+x=myObj["name"];
+
+// Looping an Object
+
+myObj2= {"name":"Okan","age":30,"car" :null};
+for(x in myObj2){
+document.getElementById("demo").innerHTML +=x;
+}
+
+myObj2= {"name":"Okan","age":30,"car" :null};
+for(x in myObj2){
+document.getElementById("demo").innerHTML +=myObj2[x];
+}
+
+// Nested JSON Objects
+myObj = {
+	"name":"John",
+	"age":30,
+	"cars":{
+		"car1":"Ford",
+		"car2":"BMW",
+		"car3":"VW"
+		}
+	}
+	x= myObj.cars.car2;
+	alert(x);
+	//or
+	x= myObj.cars["cars2"];
+	
+	// modifiy values
+	
+	myObj.cars.car2="Mercedes";
+	//or 
+	myObj.cars["car2"]= "Mercedes";
+	alert(myObj.cars.car2);
+	
+	// Delete Object Properties
+	delete myObj.cars.car2;
+	
+	alert(myObj.cars.car2);
+	
+	document.getElementById("demo").innerHTML = JSON.stringify(myObj);
+	
+
+
+</script>
+
+</body>
+</html>
