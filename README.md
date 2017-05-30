@@ -1,5 +1,9 @@
 # JsonExample
 
+JSON Files
+The file type for JSON files is ".json"
+The MIME type for JSON text is "application/json"
+
 JSON Values
 In JSON, values must be one of the following data types:
 
