@@ -1,0 +1,73 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+This is a skeleton html file that you can use to get you started on each new 
+HTML project
+
+Name: Your Name Here
+Class: CIS 3303
+Section: x
+-->
+<html>
+
+<head>
+<title>My Title</title>
+ <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+
+myObj = {"name":"John", "age":30, "cars":["Ford","VW","BMW"] }
+
+x = myObj.cars[0];
+alert(x);
+var y="";
+// Looping Through an Array
+for( i in myObj.cars) {
+y+= myObj.cars[i];
+alert(y);
+}
+	
+myobj= {
+"name":"John",
+"age":30,
+"cars": [
+	{"name":"Ford","models":["Fiesta","Focus","Mondeo"]},
+	{"name":"BMW","models":["320","520","X5"]},
+	{"name":"Fiat","models":["500","Panda"]}
+  ]
+}
+
+var z="";
+for(i in myobj.cars) {
+z+= "<h1>" + myobj.cars[i].name+"</h1>";
+	for(j in myobj.cars[i].models) {
+	z+= myobj.cars[i].models[j]+" ";
+	}
+}
+document.getElementById("demo").innerHTML= z;
+
+
+// modify Array Values
+
+myobj.cars[1]="Mercedes";
+
+// Delte Array Items
+
+delete myobj.cars[1];
+
+
+
+</script>
+
+</body>
+</html>
