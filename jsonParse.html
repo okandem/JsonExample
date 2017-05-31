@@ -1,0 +1,66 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+This is a skeleton html file that you can use to get you started on each new 
+HTML project
+
+Name: Your Name Here
+Class: CIS 3303
+Section: x
+-->
+<html>
+
+<head>
+<title>My Title</title>
+ <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+//A common use of JSON is to exchange data to/from a web server.
+
+//When receiving data from a web server, the data is always a string.
+
+//Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+
+var obj = JSON.parse('{"name":"John","age":30,"city":"Ankara"}');
+document.getElementById("demo").innerHTML = obj.name + " , " + obj.age;
+
+
+var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
+var obj = JSON.parse(text);
+obj.birth = new Date(obj.birth);
+
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
+
+
+var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
+var obj = JSON.parse(text, function (key, value) {
+    if (key == "birth") {
+        return new Date(value);
+    } else {
+        return value;
+    }});
+
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
+
+// Parsing Functions
+
+var text = '{ "name":"John", "age":"function () {return 30;}", "city":"New York"}';
+var obj = JSON.parse(text);
+obj.age = eval("(" + obj.age + ")");
+
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age();
+
+</script>
+
+</body>
+</html>
